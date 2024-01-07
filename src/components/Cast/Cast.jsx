@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchActors } from 'services/TmbdApi';
 import Loader from 'components/Loader/Loader';
-import { List, Text } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -29,13 +28,14 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className='CastContainer'>
       {loading && <Loader />}
 
-      <List>
+      <ul className='CastList'>
         {actors.map(({ id, profile_path, original_name, name, character }) => (
-          <li key={id}>
+          <li className='CastItem' key={id}>
             <img
+              className='CastImage'
               width="200px"
               src={
                 profile_path
@@ -44,11 +44,11 @@ const Cast = () => {
               }
               alt={original_name}
             />
-            <Text>{name}</Text>
-            <Text>Character: {character}</Text>
+            <p className='CastText'>{name}</p>
+            <p className='CastText'>Character: {character}</p>
           </li>
         ))}
-      </List>
+      </ul>
     </div>
   );
 };
