@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 
 const Form = ({ searchMovies }) => {
-  const [_, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState('');
 
   const handleInputChange = event => {
