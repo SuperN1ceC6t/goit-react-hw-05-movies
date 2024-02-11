@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
-import EditorList from 'pages/EditorList/EditorList';
+import EditorList from 'components/EditorList/EditorList';
 import Form from 'components/Form/Form';
 import { fetchSearchByKeyword } from 'services/TmbdApi';
 

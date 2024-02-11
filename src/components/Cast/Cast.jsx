@@ -28,14 +28,14 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <div className='CastContainer'>
+    <div className="CastContainer">
       {loading && <Loader />}
 
-      <ul className='CastList'>
+      <ul className="CastList">
         {actors.map(({ id, profile_path, original_name, name, character }) => (
-          <li className='CastItem' key={id}>
+          <li className="CastItem" key={id}>
             <img
-              className='CastImage'
+              className="CastImage"
               width="200px"
               src={
                 profile_path
@@ -44,11 +44,12 @@ const Cast = () => {
               }
               alt={original_name}
             />
-            <p className='CastText'>{name}</p>
-            <p className='CastText'>Character: {character}</p>
+            <p className="CastText">{name}</p>
+            <p className="CastText">Character: {character}</p>
           </li>
         ))}
       </ul>
+      {actors.length === 0 && <div>We don't have any casts for this movie</div>}
     </div>
   );
 };
